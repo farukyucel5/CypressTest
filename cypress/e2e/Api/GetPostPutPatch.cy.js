@@ -1,4 +1,7 @@
+const { should, expect } = require('chai');
 
+// Enable the `should` interface in the test file
+should();
 
 describe("get request", () => {
 
@@ -29,7 +32,6 @@ describe("get request", () => {
             "gender":"male",
             "status": "inactive"
         }
-
         cy.request({
           method : "GET",
           url: "https://gorest.co.in/public/v2/users",
@@ -37,20 +39,20 @@ describe("get request", () => {
             'authorization':"Bearer f057f4dd41b1f826a534feb56c0ae6e1e7b869dd681f7ba3314a0db2104c5c96"
           }
 
-    }).then((res)=>{
-        expect(res.body).to.have.lengthOf(10)
-        const actualArray = res.body;
-        expect(actualArray).to.deep.include(expectedBody);
-        res.body.forEach(element => {
+        }).then((res)=>{
+            console.log(res);
+            expect(res.body).to.have.lengthOf(10)
+            const actualArray = res.body;
+            expect(actualArray).to.deep.include(expectedBody);
+            res.body.forEach(element => {
             expect(element.id).to.be.greaterThan(600000)
-        });
-    })
+             });
+       })
     
+ })
 
-   
 
-
-    })
+     
 
 
 

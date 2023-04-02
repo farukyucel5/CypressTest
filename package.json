@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@shelex/cypress-allure-plugin": "^2.37.0",
+    "chai": "^4.3.7",
     "cypress-mochawesome-reporter": "^3.3.0",
     "cypress-xpath": "^2.0.1"
   }
