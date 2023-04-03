@@ -53,17 +53,13 @@ describe("get post put request", () => {
 
    })
       
-
-
-
-
-  })
+})
 
 
   //===============================get request===================================================\\
 
 
-    it("https://gorest.co.in/public/v2/users/x  get a specific user",() =>{
+    it("get a specific user",() =>{
       
        cy.request({
         method : "GET",
@@ -84,7 +80,7 @@ describe("get post put request", () => {
 
 
 
-    it("https://gorest.co.in/public/v2/users get users",()=>{
+    it("get users",()=>{
       cy.fixture("CreateUser").then((payload)=>{
         let expectedBody={
             "id":userId,
@@ -112,9 +108,7 @@ describe("get post put request", () => {
 
       })
 
-      
-    
- })
+  })
 
 
 
@@ -122,7 +116,7 @@ describe("get post put request", () => {
 
 
 
- it("https://gorest.co.in/public/v2/users/x  get a specific user",() =>{
+ it("Delete the user created",() =>{
       
         cy.request({
             method : "DELETE",
@@ -131,10 +125,10 @@ describe("get post put request", () => {
             'Authorization':"Bearer 288b3cf32c0213ab2606de889be49ba07c85ff9fb3321de33b8b05ec94da503e"
             }
 
- }).then((res)=>{
-     expect(res.status).to.eq(204)
+         }).then((res)=>{
+            expect(res.status).to.eq(204)
 
-})
+         })
 
 
 })
